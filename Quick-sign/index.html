@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title> Signature </title>
+<link href="style.css" rel="Stylesheet" type="text/css">
+</head>
+<body>
+<div class="content">
+<div class="upperOptions">
+<div class="options">
+<div class="colpic" > 
+<label> Text Color picker </label>
+<input type="color" name="color-Picker" id="textColor">
+</div>
+<div class="backcolpic" > 
+<label> Background Color picker </label>
+<input type="color" name="color-Picker" id="backColor">
+</div>
+<div class="fsize"> 
+<label> Font Size picker </label>
+<select id="fontSize">
+<option value="5"> 5px </option>
+<option value="10"> 10px </option>
+<option value="20"> 20px </option>
+<option value="30"> 30px </option>
+<option value="40"> 40px </option>
+<option value="50"> 50px </option>
+</select>
+</div>
+</div>
+</div>
+<div class="signatureArea">
+<canvas class="canvas" id="myCanvas" width="640" height="400"></canvas>
+</div>
+
+<div class="lowerOptions">
+<div class="options">
+<div> 
+<button type="button" id="clear"> clear </button>
+</div>
+<div> 
+<button type="button" id="save"> Save & Download </button>
+
+</div>
+<div> 
+<button type="button" id="retrive"> Retrive Saved Signature </button>
+</div>
+</div>
+</div>
+</div>
+<script src="index.js" charset="utf-8"></script>
+</body>
+</html>

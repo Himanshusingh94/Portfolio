@@ -1,0 +1,143 @@
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+  padding: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Wrapper Styling */
+.wrapper {
+  width: 90%;
+  max-width: 800px;
+  padding: 40px;
+  background-color: #333;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Typing Text Styling */
+.typing-text p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.typing-text p span {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.typing-text p span.active {
+  color: #ff9800;
+}
+
+.typing-text p span.correct {
+  color: #4caf50;
+}
+
+.typing-text p span.incorrect {
+  color: #f44336;
+  text-decoration: underline;
+}
+
+/* Input Field Styling */
+.wrapper .input-field {
+  padding: 13px 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: -99;
+}
+
+/* Result Details Styling */
+.result-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #bfbfbf;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 20px 0;
+  background-color: #444;
+}
+
+.result-details li {
+  list-style: none;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Button Styling */
+.content button {
+  width: 120px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.content button:hover {
+  background-color: #e68900;
+}
+
+.content button:active {
+  transform: scale(0.98);
+}
+
+/* High Score Styling */
+.high {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #444;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-bar-filled {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+/* Custom Text Selection Styling */
+::selection {
+  background-color: #ff9800;
+  color: #fff;
+}

@@ -1,0 +1,267 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    /* Removed align-items: center; to allow content to naturally flow and scroll if needed */
+    min-height: 100vh; /* Ensures background covers full viewport height */
+    margin: 0;
+    background: linear-gradient(to right bottom, #4CAF50, #2196F3); /* Modern gradient background */
+    color: #333;
+    padding: 10px; /* Reduced padding around the content for more compactness */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    overflow: hidden; /* This makes the body NOT scroll. Use with caution as content might be cut off on very small screens. */
+}
+
+/* Main Content Wrapper */
+.content {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 20px; /* Reduced padding inside the content container for compactness */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap between sections for compactness */
+    width: 95%; /* Increased width slightly to use more horizontal space */
+    max-width: 700px; /* Reduced max-width for a more compact feel */
+    box-sizing: border-box;
+    max-height: 98vh; /* Limits the height of the content to fit the viewport */
+    overflow-y: auto; /* Allows scrolling *inside* the content div if it overflows its max-height */
+}
+
+/* Option Sections (Upper and Lower) */
+.upperOptions,
+.lowerOptions {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px 15px; /* Reduced padding for option sections for compactness */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner Options Container */
+.options {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-around; /* Distribute space evenly */
+    align-items: center;
+    gap: 15px; /* Reduced gap between individual option groups for compactness */
+}
+
+/* Individual Option Groups (Color pickers, font size) */
+.colpic, .backcolpic, .fsize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Reduced gap within option groups for compactness */
+    text-align: center;
+    flex: 1; /* Allow these items to grow and shrink */
+    min-width: 120px; /* Reduced min-width to allow more compression */
+}
+
+/* Specific styling for the divs directly within .lowerOptions .options (for buttons) */
+.lowerOptions .options > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Allow these items to grow and shrink */
+    min-width: 150px; /* Give buttons enough space, adjusted for compactness */
+    box-sizing: border-box; /* Include padding/border in width */
+}
+
+label {
+    font-size: 0.85em; /* Slightly reduced font size for labels for compactness */
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 3px; /* Reduced margin for compactness */
+}
+
+/* Input Styles */
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px; /* Reduced width for compactness */
+    height: 30px; /* Reduced height for compactness */
+    border: none;
+    border-radius: 6px; /* Slightly smaller border-radius for compactness */
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 6px; /* Slightly smaller border-radius for compactness */
+}
+
+input[type="color"]:hover {
+    transform: scale(1.05);
+}
+
+select {
+    padding: 6px 10px; /* Reduced padding for compactness */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Slightly smaller border-radius for compactness */
+    background-color: #fff;
+    font-size: 0.9em; /* Slightly reduced font size for select for compactness */
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    min-width: 70px; /* Reduced min-width for compactness */
+}
+
+select:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px; /* Slightly smaller border-radius for compactness */
+    padding: 10px 20px; /* Reduced padding for compactness */
+    font-size: 0.95em; /* Slightly reduced font size for compactness */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    width: 100%; /* Make buttons fill their parent div */
+    max-width: 200px; /* Prevent them from becoming too wide, adjusted for compactness */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Specific button colors for better visual distinction */
+#clear {
+    background-color: #dc3545;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+}
+
+#clear:hover {
+    background-color: #c82333;
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.3);
+}
+
+#save {
+    background-color: #28a745;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+}
+
+#save:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+
+#retrive {
+    background-color: #ffc107;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.2);
+}
+
+#retrive:hover {
+    background-color: #e0a800;
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Signature Area and Canvas */
+.signatureArea {
+    border: 1px solid #ddd; /* Thinner border for compactness */
+    border-radius: 8px; /* Slightly smaller border-radius for compactness */
+    overflow: hidden; /* Ensures canvas stays within bounds */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fcfcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px; /* Reduced padding for compactness */
+    min-height: 350px; /* Reduced min-height for the signature area for compactness */
+}
+
+.canvas {
+    background-color: #ffffff; /* White background for drawing */
+    display: block; /* Remove extra space below canvas */
+    max-width: 100%; /* Ensure canvas scales down on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 6px; /* Slightly smaller border-radius for compactness */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding: 15px; /* Adjusted padding for smaller screens */
+        gap: 15px; /* Adjusted gap for smaller screens */
+    }
+
+    .options {
+        flex-direction: column; /* Stack options vertically on small screens */
+        gap: 10px; /* Adjusted gap for smaller screens */
+    }
+
+    .colpic, .backcolpic, .fsize, .lowerOptions .options > div {
+        width: 100%; /* Full width for better touch targets */
+        min-width: unset; /* Remove min-width restriction on small screens */
+    }
+
+    button {
+        max-width: 100%; /* Buttons can take full width of their parent */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px; /* Even less padding on very small screens */
+    }
+
+    .content {
+        padding: 10px; /* Further reduced content padding */
+        gap: 10px; /* Further reduced gap */
+    }
+
+    .upperOptions, .lowerOptions {
+        padding: 8px 10px; /* Further reduced option section padding */
+    }
+
+    label {
+        font-size: 0.8em; /* Further reduced font size */
+    }
+
+    button {
+        padding: 8px 15px; /* Further reduced button padding */
+        font-size: 0.9em; /* Further reduced button font size */
+    }
+
+    input[type="color"] {
+        width: 45px;
+        height: 25px;
+    }
+
+    select {
+        padding: 5px 8px;
+        font-size: 0.85em;
+    }
+
+    .signatureArea {
+        min-height: 280px; /* Further reduced height for very small screens */
+    }
+}
